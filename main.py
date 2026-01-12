@@ -1,11 +1,55 @@
 from database import *
+from updates import *
+
+
 def worker():
     name = input("Enter your name: ")
     surname = input("Enter your surname: ")
     email = input("Enter your email: ")
     password = input("Enter your password: ")
-    add_account(name,surname,email,password)
+    add_account(name, surname, email, password)
+
+
 def to_see():
     show_result()
 
-to_see()
+
+def remove():
+    pass
+
+
+def update():
+    print("""
+    1 - name
+    2 - surname
+    3 - email
+    4 - password
+    0 - stop updating
+    """)
+    while True:
+        options = int(input('Which you want to update: '))
+        if options == 1:
+            from_which_id = int(input("Enter id: "))
+            what_name = input("Enter name: ").title()
+
+            update_name(what_name, from_which_id)
+            print("information updated successfully")
+        elif options == 2:
+            from_which_id = int(input("Enter id: "))
+            what_surname = input("Enter surname: ").title()
+            update_surname(what_surname, from_which_id)
+            print("information updated successfully")
+        elif options == 3:
+            from_which_id = int(input("Enter id: "))
+            what_email = input("Enter email: ").title()
+            update_email(what_email, from_which_id)
+            print("information updated successfully")
+        elif options == 4:
+            from_which_id = int(input("Enter id: "))
+            what_password = input("Enter password: ").title()
+            update_password(what_password, from_which_id)
+            print("information updated successfully")
+        elif options == 0:
+            break
+        else:
+            print('Invalid option')

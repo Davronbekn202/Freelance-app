@@ -29,16 +29,15 @@ def add_account(name,surname,email,password):
     INSERT INTO accounts(name,surname,email,password)
     VALUES(%s,%s,%s,%s)
     """,(name,surname,email,password))
+    connection.commit()
+    cursor.close()
 def show_result():
     connection = get_connection()
     cursor = connection.cursor()
     cursor.execute("""SELECT * FROM accounts""")
     row = cursor.fetchall()
     for rows in row:
-        print(f"id-{rows[0]}, surname-{rows[1]}, email-{rows[2]}, password-{rows[3]},")
-
-show_result()
-# table_of_accounts()
+        print(f"id-{rows[0]}, name-{rows[1]}, surname-{rows[2]}, email-{rows[3]},")
 
 
-
+table_of_accounts()
