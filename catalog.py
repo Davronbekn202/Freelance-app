@@ -1,20 +1,20 @@
 from main import *
-
+print("""
+1 - add
+2 - see
+3 - remove
+3 - update
+""")
 while True:
-    choose = input('choose the number: ')
-    if choose == 'add':
+    choose = int(input('choose the number: '))
+    if choose == 1:
         worker()
-    elif choose == 'see':
+    elif choose == 2:
         to_see()
-    elif choose == 'del':
+    elif choose == 3:
         remove()
-    elif choose == 'update':
+    elif choose == 4:
         update()
     else:
         print('please write valid command')
-    try:
-        if type(choose) == int:
-            raise 'the type of choose is int write in str type'
 
-    except Exception as errors:
-        print(errors)

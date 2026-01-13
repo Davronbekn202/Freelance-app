@@ -38,6 +38,12 @@ def show_result():
     row = cursor.fetchall()
     for rows in row:
         print(f"id-{rows[0]}, name-{rows[1]}, surname-{rows[2]}, email-{rows[3]},")
-
-
+def delete_info(id):
+    connection = get_connection()
+    cursor = connection.cursor()
+    cursor.execute("""
+    DELETE from accounts WHERE id = %s
+    """,(id,))
+    connection.commit()
+    cursor.close()
 table_of_accounts()

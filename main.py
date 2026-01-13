@@ -15,8 +15,9 @@ def to_see():
 
 
 def remove():
-    pass
-
+    pick_up = input('Enter id: ')
+    delete_info(pick_up)
+    print('information deleted successfully')
 
 def update():
     print("""
