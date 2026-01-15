@@ -1,4 +1,6 @@
+from base.database2 import add_to_job, add_to_portfolio
 from main import *
+
 print("""
 1 - add
 2 - see
@@ -15,6 +17,9 @@ while True:
         remove()
     elif choose == 4:
         update()
+    elif choose == 5:
+        add_to_job()
+        if add_to_job:
+            add_to_portfolio()
     else:
         print('please write valid command')
-

@@ -46,4 +46,5 @@ def delete_info(id):
     """,(id,))
     connection.commit()
     cursor.close()
-table_of_accounts()
+
+# table_of_accounts()

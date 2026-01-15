@@ -1,4 +1,4 @@
-from database import *
+from base.database import *
 from updates import *
 
 

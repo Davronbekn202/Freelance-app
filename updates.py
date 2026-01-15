@@ -1,4 +1,4 @@
-from database import get_connection
+from base.database import get_connection
 
 def update_name(name,id):
     connection = get_connection()
