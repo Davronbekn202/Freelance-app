@@ -11,15 +11,14 @@ while True:
     choose = int(input('choose the number: '))
     if choose == 1:
         worker()
+        add_to_portfolio()
+        if add_to_job:
+            add_job()
     elif choose == 2:
         to_see()
     elif choose == 3:
         remove()
     elif choose == 4:
         update()
-    elif choose == 5:
-        add_to_job()
-        if add_to_job:
-            add_to_portfolio()
     else:
         print('please write valid command')

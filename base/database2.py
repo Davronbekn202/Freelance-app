@@ -25,13 +25,13 @@ def table_of_job():
     connection.commit()
     cursor.close()
     print("table of job created")
-def add_to_job(name,profession,expiriance,portfolio_id,accounts_id):
+def add_to_job(name,profession,experience,portfolio_id,accounts_id):
     connection = get_connection()
     cursor = connection.cursor()
     cursor.execute("""
-    INSERT INTO job (name,profession,expiriance,portfolio_id,accounts_id)
+    INSERT INTO job (name,profession,experience,portfolio_id,accounts_id)
     VALUES(%s,%s,%s,%s,%s)
-    """,(name,profession,expiriance,portfolio_id,accounts_id))
+    """,(name,profession,experience,portfolio_id,accounts_id))
     connection.commit()
     cursor.close()
 

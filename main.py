@@ -1,4 +1,5 @@
 from base.database import *
+from base.database2 import *
 from updates import *
 
 
@@ -54,3 +55,17 @@ def update():
             break
         else:
             print('Invalid option')
+
+def add_job():
+    occupation = input("Enter your occupation: ")
+    experience = input("Enter your experience: ")
+    portfolio_id = int(input("Enter portfolio id: "))
+    accounts_id = int(input("Enter accounts id: "))
+    add_to_job(occupation,experience,portfolio_id,accounts_id)
+
+
+def add_portfolio():
+    title = input("Enter the title: ").title()
+    description = input("Enter the description: ").capitalize()
+    created_at = input("Enter the created at: ")
+    accounts_id = int(input("Enter accounts id: "))
