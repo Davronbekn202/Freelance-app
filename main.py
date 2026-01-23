@@ -1,7 +1,7 @@
 from base.database import *
 from base.database2 import *
 from updates import *
-
+from base.quantity_of_work import *
 
 def worker():
     name = input("Enter your name: ")
@@ -69,3 +69,10 @@ def add_portfolio():
     description = input("Enter the description: ").capitalize()
     created_at = input("Enter the created at: ")
     accounts_id = int(input("Enter accounts id: "))
+    add_to_portfolio(title,description,created_at,accounts_id)
+
+def adding_works():
+    title = input("Enter the title: ")
+    description = input("Enter description of work: ")
+    profession = input("Enter the occupation: ")
+    add_work(title,description,profession)
