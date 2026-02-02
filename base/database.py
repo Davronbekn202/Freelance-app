@@ -21,6 +21,19 @@ def table_of_accounts():
     connection.commit()
     cursor.close()
     print("Table created successfully")
+def history_table():
+    connect = get_connection()
+    cursor = connect.cursor
+    cursor.execute("""
+    CREATE TABLE history (
+    id SERIAL PRIMARY KEY,
+    done BOOLEAN NOT NULL,
+    description TEXT,
+    rate INT CHECK (rate BETWEEN 1 AND 5))
+    """)
+    connect.commit()
+    cursor.close()
+    print("history table has created")
 
 def add_account(name,surname,email,password):
     connection = get_connection()
@@ -48,3 +61,4 @@ def delete_info(id):
     cursor.close()
 
 # table_of_accounts()
+history_table()
